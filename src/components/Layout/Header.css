@@ -5,13 +5,14 @@
     justify-content: space-between;
     padding-left: 100px;
     padding-right: 100px;
-    height: 100px;
+    height: 75px;
     align-items: center;
 }
 
 .brand {
     color: white;
     font-weight: 900;
+    font-size: 22px;
 }
 
 
@@ -19,9 +20,11 @@
     display: flex;
     align-self: center;
     padding: 10px;
-    border-radius: 10px;
-    gap: 4px;
+    border-radius: 50px;
+    gap: 10px;
     align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .headerText {
@@ -30,8 +33,14 @@
 }
 
 .numOfItems {
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    color: white
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 50px;
+    color: white;
+}
+
+.backImage{
+    height: 75px;
+    width: 100%;
+    object-fit: cover;
 }
