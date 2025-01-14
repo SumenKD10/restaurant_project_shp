@@ -1,0 +1,20 @@
+.summaryContainer {
+    position: relative;
+    width: 45%;
+    text-align: center;
+    align-self: center;
+    padding: 10px;
+    border-radius: 20px;
+    bottom: 20px;
+}
+
+.summaryHeading {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.summaryPara {
+    color: white;
+    font-size: 15px;
+}
