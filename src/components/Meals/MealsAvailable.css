@@ -1,4 +1,4 @@
-.menuContainer{
+.menuContainer {
     background-color: white;
     width: 50%;
     padding: 20px;
@@ -6,13 +6,15 @@
     align-self: center;
 }
 
-.menuItems{
+.menuItems {
     border-bottom: 0.5px solid gray;
     margin-bottom: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
 
-.menuItemNames{
+.menuItemNames {
     font: bold 20px solid;
     margin-bottom: 0;
     margin-top: 0;
@@ -20,14 +22,24 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.menuItemDescriptions{
+.menuItemDescriptions {
     font-style: italic;
     font-size: 12px;
 }
 
-.menuItemPrices{
+.menuItemPrices {
     margin-top: 0;
     color: brown;
     margin-bottom: 10px;
     font-size: 18px;
+}
+
+.textField {
+    border-width: 0.5;
+    padding: 0;
+}
+
+.addButton {
+    border-radius: 30;
+    border-width: 0;
 }
