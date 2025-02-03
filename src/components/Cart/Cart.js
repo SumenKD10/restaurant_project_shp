@@ -1,6 +1,8 @@
-import "Cart.css";
+import "./Cart.css";
+import Modal from "../UI/Modal";
+import { Colors } from "../../utils/Colors";
 
-export default function Cart() {
+export default function Cart({ showCart }) {
     const cartItems = [
         {
             "id": "m1",
@@ -15,22 +17,35 @@ export default function Cart() {
             "quantity": 2
         }
     ];
-    const totalAmount = cartItems.map((eachItem) => (eachItem.price * eachItem.quantity))
+    let sum = 0;
+    cartItems.map((eachItem) => sum += eachItem.price * eachItem.quantity);
+    const totalAmount = sum.toFixed(2);
 
     return (
-        <div>
-            {cartItems.map((eachItem) => {
-                <div>
-                    {eachItem.name} - {eachItem.price} - {eachItem.quantity} - {eachItem.price * eachItem.quantity}
+        <Modal visibility={showCart}>
+            {cartItems.map((eachItem) =>
+                <div className="eachCartItem">
+                    <div style={{ flex: 1, textAlign: "center" }}>
+                        {eachItem.name}
+                    </div>
+                    <div style={{ flex: 1, textAlign: "center" }}>
+                        {eachItem.price}
+                    </div>
+                    <div style={{ flex: 1, textAlign: "center" }}>
+                        {eachItem.quantity}
+                    </div>
+                    <div style={{ flex: 1, textAlign: "center" }}>
+                        {eachItem.price * eachItem.quantity}
+                    </div>
                 </div>
-            })}
-            <div>
+            )}
+            <div style={{ textAlign: 'right' }}>
                 Total Amount = {totalAmount}
+            </div>"
+            <div style={{ justifyContent: 'flex-end', display: 'flex', gap: '10px', marginTop: "0px" }}>
+                <button className="closeButton" style={{ backgroundColor: 'black', color: 'white' }}>Close</button>
+                <button className="orderButton" style={{ backgroundColor: Colors.layoutDarkRed, color: 'white' }}>Order</button>
             </div>
-            <div>
-                <button>Close</button>
-                <button>Order</button>
-            </div>
-        </div>
-    )
+        </Modal>
+    );
 }
