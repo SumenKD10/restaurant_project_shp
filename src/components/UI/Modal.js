@@ -3,12 +3,12 @@ import { Fragment } from "react";
 import { createPortal } from 'react-dom';
 
 const Backdrop = () => {
-    console.log("I am making Backdrop");
+    // console.log("I am making Backdrop");
     return <div className="backdrop"></div>
 }
 
 const ModalOverlay = (props) => {
-    console.log("I am making Modal Overlay");
+    // console.log("I am making Modal Overlay");
     return <div className="modal">
         <div className="content">{props.children}</div>
     </div>

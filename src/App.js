@@ -1,9 +1,10 @@
-import { Fragment, useState } from "react";
+import {useState } from "react";
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layout/Header";
 import Summary from "./components/Layout/Summary";
 import MealsAvailable from "./components/Meals/MealsAvailable";
 import { Colors } from "./utils/Colors";
+import CartProvider from "./store/CartProvider";
 
 function App() {
   const [cartView, setCartView] = useState(false);
@@ -12,16 +13,16 @@ function App() {
   }
 
   return (
-    <Fragment>
+    <CartProvider>
       <div style={{ backgroundColor: Colors.layoutGray, height: '100%', paddingBottom: 100 }}>
-        <Cart showCart={cartView}/>
+        <Cart showCart={cartView} onClose={toggleCartView} />
         <Header cartViewButtonFunc={toggleCartView} />
         <div style={{ display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
           <Summary />
           <MealsAvailable />
         </div>
       </div>
-    </Fragment>
+    </CartProvider>
   );
 }
 
