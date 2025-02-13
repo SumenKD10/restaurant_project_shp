@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layout/Header";
 import Summary from "./components/Layout/Summary";
@@ -19,7 +19,7 @@ function App() {
         <Header cartViewButtonFunc={toggleCartView} />
         <div style={{ display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
           <Summary />
-          <MealsAvailable />
+          <MealsAvailable cartView={cartView} />
         </div>
       </div>
     </CartProvider>

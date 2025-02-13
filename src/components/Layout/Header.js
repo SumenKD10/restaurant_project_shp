@@ -6,8 +6,6 @@ import { CartContext } from '../../store/cart-context';
 
 const Header = ({ cartViewButtonFunc }) => {
     const cartCtx = useContext(CartContext);
-    console.log("CartGot ",cartCtx)
-    const noOfCartItems = cartCtx.items.length;
 
     return (
         <div>
@@ -20,7 +18,7 @@ const Header = ({ cartViewButtonFunc }) => {
                     <div className='headerText'>
                         Your cart
                     </div>
-                    <div className='numOfItems' style={{ backgroundColor: Colors.layoutRed }}>{noOfCartItems}</div>
+                    <div className='numOfItems' style={{ backgroundColor: Colors.layoutRed }}>{cartCtx.items.size}</div>
                 </button>
             </div>
             <img src="https://github.com/academind/react-complete-guide-code/blob/11-practice-food-order-app/extra-files/meals.jpg?raw=true" alt='No Image Available' className='backImage' />
